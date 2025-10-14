@@ -25,7 +25,7 @@ function Product() {
       history: []
     };
     if(this.books.length !== 0)
-      renderBook();
+      //renderBook();
   }
 
   // 렌더링용 함수1. 도서 상태에 따라 렌더링되는 함수
