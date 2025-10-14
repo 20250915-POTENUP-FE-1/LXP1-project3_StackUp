@@ -1,0 +1,107 @@
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.1/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
+
+body {
+  font-family: "Wanted Sans Variable";
+}
+.flex-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 70px;
+}
+/* 카드 리스트 */
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 20px;
+}
+.book-item {
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 0 1 calc(25% - 15px);
+  margin-bottom: 0;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e4e6ea;
+  background-color: #fff;
+}
+.book-item:hover {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1600px) {
+  .book-item {
+    flex: 0 1 calc(33.333% - 14.333px);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .book-item {
+    flex: 0 1 calc(50% - 10px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .book-item {
+    flex: 0 1 100%;
+  }
+}
+.book-info {
+  padding: 20px;
+}
+.book-info span + span {
+  margin-top: 10px;
+}
+.book-title {
+  font-weight: bold;
+  font-size: 16px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.book-description {
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.book-instructor {
+  font-size: 13px;
+  color: #555;
+}
+.book-actions {
+  padding: 0 20px 20px;
+}
+.book-image {
+  overflow: hidden;
+}
+.book-image img {
+  max-width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+}
+.edit-btn {
+  background: #f5f7fb;
+  color: #333;
+  border: 1px solid #e5e7eb;
+}
+.edit-btn:hover {
+  background: #dddee4;
+}
+.delete-btn {
+  border: 1px solid #fecaca;
+}
+.edit-btn,
+.delete-btn {
+  font-size: 14px;
+}
+/* 카드 등록 패널 */
+.product-card {
+  position: sticky;
+  top: 100px;
+  width: 400px;
+  min-width: 400px;
+}
