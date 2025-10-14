@@ -51,7 +51,7 @@ body {
   padding: 20px;
 }
 .book-info span + span {
-  margin-top: 10px;
+  margin-top: 4px;
 }
 .book-title {
   font-weight: bold;
@@ -62,6 +62,7 @@ body {
   overflow: hidden;
 }
 .book-description {
+  min-height: 67px;
   font-size: 14px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -99,9 +100,9 @@ body {
   font-size: 14px;
 }
 /* 카드 등록 패널 */
-.product-card {
+/* .product-card {
   position: sticky;
   top: 100px;
   width: 400px;
   min-width: 400px;
-}
+} */
