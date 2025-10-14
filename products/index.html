@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대시보드</title>
+  <link rel="stylesheet" href="../src/css/product.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- 헤더 영역 -->
+
+    <!-- 메인 컨테이너 -->
+    <div class="main-container">
+      <!-- 사이드바 -->
+
+      <!-- 메인 콘텐츠 -->
+      <main class="main-content">
+
+        <div class="content-header">
+          <h1>도서 상품 관리</h1>
+          <p>도서 상품들을 관리합니다.</p>
+        </div>
+
+        <!-- 도서 카테고리 선택 영역 -->
+        <div class="category-select">
+          <button type="button" class="category-btn" data-category-code="it">
+            IT
+          </button>
+          <button type="button" class="category-btn" data-category-code="science">
+            기술과학  
+          </button>
+          <button type="button" class="category-btn" data-category-code="literature">
+            문학
+          </button>
+          <button type="button" class="category-btn" data-category-code="history">
+            역사
+          </button>
+        </div>
+
+        <!-- 도서 등록 폼 및 리스트 카드 -->
+        <div class="product-card">
+          <div class="product-card-header">
+            <h2 class="product-card-title">
+              📖 <span id="book-category-name"></span> 도서 관리
+            </h2>
+            <span class="book-count">총 <span id="book-count">0</span>개</span>
+          </div>
+          <form id="book-regist-form" class="book-form">
+            <div class="input-group">
+              <input type="text" id="book-name-input" placeholder="도서명" class="book-name-input">
+              <input type="number" id="book-price-input" placeholder="가격" class="book-price-input">
+            </div>
+            <button type="submit" class="book-submit-btn">확인</button>
+          </form>
+          <ul id="book-list" class="book-list">
+            <!-- 추가된 도서가 들어가는 영역 -->
+          </ul>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- 수정 모달 -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>도서 정보 수정</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="book-edit-form" class="modal-form">
+        <input type="hidden" id="edit-book-index">
+        <div class="form-group">
+          <label for="edit-book-name">도서명</label>
+          <input type="text" id="edit-book-name" class="form-input" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-book-price">가격</label>
+          <input type="number" id="edit-book-price" class="form-input" required>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="cancel-btn">취소</button>
+          <button type="submit" class="save-btn">저장</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="../src/js/utils/modal.js"></script>
+  <script type="module" src="../src/js/layout/includeHeader.js"></script>
+  <script type="module" src="../src/js/layout/includeSidebar.js"></script>
+  <script type="module" src="../src/js/pages/Product.js"></script>
+</body>
+
+</html>
