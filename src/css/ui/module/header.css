@@ -5,9 +5,13 @@
   width: 100%;
   background-color: #222;
   color: white;
-  padding: 1rem 2rem;
+  padding: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
 }
 
 .header-content {

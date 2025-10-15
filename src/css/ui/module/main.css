@@ -1,7 +1,7 @@
 .main-container {
   display: flex;
-  min-height: calc(100vh - 80px);
-  margin-top: 80px;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
 }
 
 .main-content {
@@ -18,6 +18,7 @@
 .content-header h1 {
   color: #333;
   margin-bottom: 0.5rem;
+  font-size: 28px;
 }
 
 .content-header p {
