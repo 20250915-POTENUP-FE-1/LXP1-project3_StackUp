@@ -1,0 +1,86 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --primary: #4f46e5;
+  --ring: #a5b4fc;
+  --shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
+  --pill: #eef2ff;
+}
+.product-card {
+  width: 400px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.product-card-title {
+  font-size: 22px;
+  font-weight: 800;
+}
+.label {
+  font-weight: 800;
+  font-size: 18px;
+}
+.category-field,
+.title-input,
+.teacher-input,
+.desc-input {
+  width: 100%;
+  height: 54px;
+  padding: 14px 16px;
+  font-size: 16px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.lecture-form ::placeholder {
+  color: var(--muted);
+}
+.desc-input {
+  height: 180px;
+  line-height: 1.5;
+  resize: vertical;
+  padding: 16px;
+}
+.category-field:focus,
+.title-input:focus,
+.teacher-input:focus,
+.thumb-input:focus,
+.desc-input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px rgba(165, 180, 252, 0.35);
+}
+.hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.submit-btn {
+  width: 100%;
+  height: 64px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 16px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.25);
+  transition: transform 0.06s ease, box-shadow 0.12s ease;
+}
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.32);
+}
+.submit-btn:active {
+  transform: translateY(0);
+}
