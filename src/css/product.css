@@ -1,38 +1,83 @@
 @import "./ui/index.css";
 @import "./ui/module/modal.css";
 
+/* 도서 카테고리 선택 영역 */
+
 .category-select {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  justify-content: flex-start; /* ✅ 가운데 → 왼쪽 */
+  gap: 12px;
   flex-wrap: wrap;
+  margin: 12px 0 20px;
 }
 
+/* 버튼 기본 모양 */
 .category-btn {
-  background: #6366f1;
-  color: #fffacd;
-  border: none;
-  border-radius: 25px;
-  padding: 0.75rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid #e6e8ef;
+  border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+  white-space: nowrap;
 }
 
-.category-btn.active {
-  background: #f59e0b;
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-}
-
+/* 마우스 올렸을 때 */
 .category-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
+}
+
+/* 선택(활성)된 버튼 - '전체' */
+.category-btn.active {
+  border: 2px solid #6366f1;
+  background: #f4f6ff;
+}
+
+/* ───────────────────────────────
+   카테고리별 아이콘 (이모지 버전)
+──────────────────────────────── */
+.category-btn::before {
+  content: "";
+  font-size: 19px; /* 아이콘 크기 */
+  line-height: 1;
+}
+
+/* 전체 = ⭐ */
+.category-btn[data-category-code="all"]::before {
+  content: "⭐";
+}
+
+/* 코딩기초 = 💻 */
+.category-btn[data-category-code="코딩기초"]::before {
+  content: "💻";
+}
+
+/* 데이터분석 = 🔍 */
+.category-btn[data-category-code="데이터분석"]::before {
+  content: "🔍";
+}
+
+/* 생성형AI = 🤖 */
+.category-btn[data-category-code="생성형AI"]::before {
+  content: "🤖";
+}
+
+/* 디자인 = 🎨 */
+.category-btn[data-category-code="디자인"]::before {
+  content: "🎨";
+}
+
+/* (선택) 프로그래밍 언어 = 🧩 */
+.category-btn[data-category-code="프로그래밍언어"]::before {
+  content: "🧩";
 }
 
 /* 도서 관리 카드 */
