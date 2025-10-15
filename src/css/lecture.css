@@ -1,14 +1,26 @@
 @import "./ui/index.css";
 @import "./ui/module/modal.css";
 
-/* 도서 카테고리 선택 영역 */
+/* 추후 정리 필요 */
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --primary: #4f46e5;
+  --ring: #a5b4fc;
+  --shadow: 0 10px 20px rgba(17, 24, 39, 0.08);
+  --pill: #eef2ff;
+}
 
+/* 강의 카테고리 선택 영역 */
 .category-select {
   display: flex;
   justify-content: flex-start; /* ✅ 가운데 → 왼쪽 */
   gap: 12px;
   flex-wrap: wrap;
-  margin: 12px 0 20px;
+  margin: 12px 0 36px;
 }
 
 /* 버튼 기본 모양 */
@@ -80,19 +92,23 @@
   content: "🧩";
 }
 
-/* 도서 관리 카드 */
-.product-card {
+/* 강의 관리 카드 */
+.item-card {
   background: #ffffff;
   border-radius: 20px;
-  border-top: 5px solid #6366f1;
+  border: 1px solid #e4e6ea;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.5);
   padding: 2.5rem;
-  max-width: 700px;
+  max-width: 400px;
   margin: 0 auto;
-  position: relative;
+  position: fixed;
+  right: 100px;
+  top: calc(50% + 35px);
+  transform: translateY(-50%);
+  z-index: 999;
 }
 
-.product-card-header {
+.item-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -101,7 +117,7 @@
   border-bottom: 2px solid #f1f5f9;
 }
 
-.product-card-title {
+.item-card-title {
   font-size: 1.5rem;
   font-weight: 800;
   display: flex;
@@ -109,7 +125,7 @@
   gap: 0.75rem;
 }
 
-.book-count {
+.lecture-count {
   background: #f8fafc;
   color: #475569;
   font-size: 0.9rem;
@@ -119,23 +135,102 @@
   border: 1px solid #e2e8f0;
 }
 
-/* 도서 등록 폼 */
-.book-form {
+/*  */
+.item-card {
+  width: 400px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.item-card-title {
+  font-size: 20px;
+  font-weight: 800;
+}
+.label {
+  font-weight: 600;
+  font-size: 16px;
+}
+.category-field,
+.title-input,
+.teacher-input,
+.desc-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+  color: var(--text);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.lecture-form ::placeholder {
+  color: var(--muted);
+}
+.desc-input {
+  height: 140px;
+  line-height: 1.5;
+  resize: vertical;
+  padding: 16px;
+  font-family: "Wanted Sans Variable";
+}
+.category-field:focus,
+.title-input:focus,
+.teacher-input:focus,
+.thumb-input:focus,
+.desc-input:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 4px rgba(165, 180, 252, 0.35);
+}
+.hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.submit-btn {
+  width: 100%;
+  height: 48px;
+  margin-top: 22px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(79, 70, 229, 0.25);
+  transition: transform 0.06s ease, box-shadow 0.12s ease;
+}
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.32);
+}
+.submit-btn:active {
+  transform: translateY(0);
+}
+/*  */
+
+/* 강의 등록 폼 */
+.lecture-form {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2rem;
   align-items: flex-start;
+  flex-direction: column;
 }
 
 .input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  flex: 1;
+  width: 100%;
+}
+.input-group label + * {
+  margin-top: 10px;
 }
 
-.book-name-input,
-.book-price-input {
+.lecture-name-input,
+.lecture-price-input {
   padding: 0.6rem 1rem;
   border: 2px solid #e2e8f0;
   border-radius: 12px;
@@ -146,23 +241,23 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.book-name-input {
+.lecture-name-input {
   width: 100%;
 }
 
-.book-price-input {
+.lecture-price-input {
   width: 100%;
 }
 
-.book-name-input:focus,
-.book-price-input:focus {
+.lecture-name-input:focus,
+.lecture-price-input:focus {
   outline: none;
   border-color: #6366f1;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   transform: translateY(-1px);
 }
 
-.book-submit-btn {
+.lecture-submit-btn {
   background: #6366f1;
   color: white;
   border: none;
@@ -179,23 +274,35 @@
   justify-content: center;
 }
 
-.book-submit-btn:hover {
+.lecture-submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
 
-.book-submit-btn:active {
+.lecture-submit-btn:active {
   transform: translateY(0);
 }
 
-/* 도서 리스트 */
-.book-list {
+/* 강의 리스트 */
+.flex-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.lecture-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  width: 100%;
+  gap: 20px;
 }
 
-.book-item {
+.lecture-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -205,43 +312,110 @@
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   transition: all 0.3s ease;
+  /*  */
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 0 1 calc(25% - 15px);
+  margin-bottom: 0;
+  padding: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e4e6ea;
+  background-color: #fff;
 }
 
-.book-item:hover {
+.lecture-item:hover {
   background: #f1f5f9;
   border-color: #cbd5e1;
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /*  */
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.book-item.soldout .book-name,
-.book-item.soldout .book-price {
+.lecture-item.soldout .lecture-name,
+.lecture-item.soldout .lecture-price {
   text-decoration: line-through;
   color: #475569;
 }
 
-.book-info {
+.lecture-info {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+  padding: 20px;
 }
 
-.book-info .book-name {
+.lecture-info span + span {
+  margin-top: 4px;
+}
+
+.lecture-info .lecture-name {
   font-weight: 600;
   color: #1e293b;
   font-size: 1rem;
 }
 
-.book-info .book-price {
+.lecture-info .lecture-price {
   font-weight: 500;
   color: #6366f1;
   font-size: 0.9rem;
 }
 
-.book-actions {
+.lecture-actions {
   display: flex;
   gap: 0.5rem;
 }
+
+/*  */
+.lecture-title {
+  font-weight: bold;
+  font-size: 16px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.lecture-description {
+  min-height: 67px;
+  font-size: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.lecture-instructor {
+  font-size: 13px;
+  color: #555;
+}
+.lecture-actions {
+  padding: 0 20px 20px;
+}
+.lecture-image {
+  overflow: hidden;
+}
+.lecture-image img {
+  max-width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+}
+.edit-btn {
+  background: #f5f7fb;
+  color: #333;
+  border: 1px solid #e5e7eb;
+}
+.edit-btn:hover {
+  background: #dddee4;
+}
+.delete-btn {
+  border: 1px solid #fecaca;
+}
+.edit-btn,
+.delete-btn {
+  font-size: 14px;
+}
+/*  */
 
 .soldout-btn,
 .edit-btn,
@@ -286,6 +460,21 @@
 }
 
 /* 반응형 디자인 */
+@media screen and (max-width: 1600px) {
+  .lecture-item {
+    flex: 0 1 calc(33.333% - 14.333px);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .lecture-item {
+    flex: 0 1 calc(50% - 10px);
+  }
+}
+@media screen and (max-width: 767px) {
+  .lecture-item {
+    flex: 0 1 100%;
+  }
+}
 @media (max-width: 768px) {
   .category-select {
     gap: 0.5rem;
@@ -294,7 +483,7 @@
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
   }
-  .book-form {
+  .lecture-form {
     flex-direction: column;
     gap: 1rem;
   }
@@ -302,23 +491,23 @@
     gap: 0.5rem;
     width: 100%;
   }
-  .book-submit-btn {
+  .lecture-submit-btn {
     align-self: stretch;
     margin-top: 0;
     padding: 10px;
   }
-  .product-card {
+  .item-card {
     padding: 1.5rem;
     margin: 0 1rem;
   }
 
-  .book-item {
+  .lecture-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
   }
 
-  .book-actions {
+  .lecture-actions {
     align-self: flex-end;
   }
 }
