@@ -3,44 +3,36 @@
   min-height: calc(100vh - 70px);
   margin-top: 70px;
 }
-
 .main-content {
   flex: 1;
   padding: 2rem;
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
 }
-
 .content-header {
   margin-bottom: 2rem;
 }
-
 .content-header h1 {
   color: #333;
   margin-bottom: 0.5rem;
   font-size: 28px;
 }
-
 .content-header p {
   color: #666;
 }
-
 @media (max-width: 1024px) {
   .main-content {
     padding: 1.5rem;
   }
 }
-
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column;
   }
-
   .main-content {
     padding: 1.5rem;
   }
 }
-
 @media (max-width: 480px) {
   .main-content {
     padding: 1rem;

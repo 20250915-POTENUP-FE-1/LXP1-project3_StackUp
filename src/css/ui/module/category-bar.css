@@ -1,0 +1,54 @@
+.category-select {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0 36px;
+}
+.category-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: #ffffff;
+  color: #1f2937;
+  border: 1px solid #e6e8ef;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.06);
+  white-space: nowrap;
+}
+.category-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
+}
+.category-btn.active {
+  border: 2px solid #6366f1;
+  background: #f4f6ff;
+}
+.category-btn::before {
+  content: "";
+  font-size: 19px;
+  line-height: 1;
+}
+.category-btn[data-category-code="all"]::before {
+  content: "⭐";
+}
+.category-btn[data-category-code="코딩기초"]::before {
+  content: "💻";
+}
+.category-btn[data-category-code="데이터분석"]::before {
+  content: "🔍";
+}
+.category-btn[data-category-code="생성형AI"]::before {
+  content: "🤖";
+}
+.category-btn[data-category-code="디자인"]::before {
+  content: "🎨";
+}
+.category-btn[data-category-code="프로그래밍언어"]::before {
+  content: "🧩";
+}

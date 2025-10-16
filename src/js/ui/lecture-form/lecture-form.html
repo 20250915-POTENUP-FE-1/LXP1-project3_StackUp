@@ -1,0 +1,55 @@
+<div class="lecture-card">
+  <div class="lecture-card-header">
+    <h2 class="lecture-card-title">프로그램밍 언어 강의 관리</h2>
+  </div>
+  <form id="lecture-regist-form" class="lecture-form">
+    <div class="input-group">
+      <label class="label" for="category"> 카테고리 </label>
+      <select id="category" class="option-select">
+        <option>프로그래밍 언어</option>
+        <option>코딩 기초</option>
+        <option>데이터 분석</option>
+        <option>디자인</option>
+        <option>생성형 AI</option>
+      </select>
+    </div>
+    <div class="input-group">
+      <label class="label" for="title-input">강의명</label>
+      <input
+        type="text"
+        id="title-input"
+        class="title-input"
+        placeholder="JavaScript 프론트엔드 개발자로 취업하기"
+      />
+    </div>
+    <div class="input-group">
+      <label class="label" for="instructor-input">강사님</label>
+      <input
+        type="text"
+        id="instructor-input"
+        class="instructor-input"
+        placeholder="강보람"
+      />
+    </div>
+    <div class="input-group">
+      <label class="label" for="thumb-input">썸네일 URL</label>
+      <input
+        type="file"
+        id="thumb-input"
+        class="thumb-input"
+        name="thumbnail"
+        accept="image/png, image/jpeg"
+      />
+    </div>
+    <div class="input-group">
+      <label class="label" for="desc-input">내용</label>
+      <textarea
+        type="text"
+        id="desc-input"
+        class="desc-input"
+        placeholder="강의 소개 내용을 입력하세요."
+      ></textarea>
+    </div>
+    <button type="submit" class="submit-btn">등록</button>
+  </form>
+</div>
