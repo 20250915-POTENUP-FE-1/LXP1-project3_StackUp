@@ -3,7 +3,7 @@
   justify-content: flex-start;
   gap: 12px;
   flex-wrap: wrap;
-  margin: 12px 0 36px;
+  margin: 12px 0;
 }
 .category-btn {
   display: inline-flex;
