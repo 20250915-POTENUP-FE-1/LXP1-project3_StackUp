@@ -1,0 +1,116 @@
+.flex-wrap {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 70px;
+}
+.lecture-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+.lecture-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.lecture-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.lecture-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 14px 0;
+  font-size: 1rem;
+}
+.lecture-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.lecture-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(1.5em * 2); /* 2줄 높이 확보 */
+}
+.lecture-description {
+  font-size: 14px;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  min-height: calc(1.6em * 3); /* 3줄 높이 확보 */
+}
+.lecture-instructor {
+  font-size: 13px;
+  color: #555;
+}
+.lecture-image {
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.lecture-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.edit-btn,
+.delete-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.edit-btn {
+  background: #e0e7ff;
+  color: #6366f1;
+}
+.edit-btn:hover {
+  background: #c7d2fe;
+  transform: translateY(-1px);
+}
+.delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+.delete-btn:hover {
+  background: #fecaca;
+  transform: translateY(-1px);
+}
+/* 반응형*/
+@media (max-width: 1600px) {
+  .lecture-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 1200px) {
+  .lecture-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .lecture-list {
+    grid-template-columns: 1fr;
+  }
+}
