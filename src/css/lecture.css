@@ -1,2 +1,6 @@
 @import "./ui/index.css";
 @import "./ui/module/modal.css";
+@import "./ui/module/category-bar.css";
+@import "./ui/module/lecture-form.css";
+@import "./ui/module/lecture-list.css";
+@import "./ui/module/detail.css";
