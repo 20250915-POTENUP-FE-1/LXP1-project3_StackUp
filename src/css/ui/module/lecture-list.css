@@ -114,3 +114,7 @@
     grid-template-columns: 1fr;
   }
 }
+
+.lecture-detail img {
+  max-width: 100%;
+}

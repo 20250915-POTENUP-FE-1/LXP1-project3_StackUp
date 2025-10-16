@@ -9,6 +9,7 @@ function Lecture() {
   this.categories = {};
   this.lectures = {};
   this.currentCategory = ""; // "" 이면 전체 보기
+  let imageData = "";
 
   const defaultCategories = [
     { id: "cat_basic", name: "코딩 기초" },
@@ -142,7 +143,7 @@ function Lecture() {
     const lectureCategory = $("#category").value;
     const lectureTitle = $("#title-input").value;
     const lectureInstructor = $("#instructor-input").value;
-    const lectureThumb = $("#thumb-input").value; // 파일 input이라면 별도 처리 필요
+    const lectureThumb = imageData; // 파일 input이라면 별도 처리 필요
     const lectureDesc = $("#desc-input").value;
 
     // 입력값 유효성 검증 (누락만 검증)
@@ -253,10 +254,23 @@ function Lecture() {
       e.preventDefault();
       history.back();
     }
+
+    if (e.type === "change" && event.target.classList.contains("thumb-input")) {
+      e.preventDefault();
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader(); // 브라우저에 파일을 읽을 수 있는 객체
+      reader.onload = (e) => {
+        imageData = e.target.result; // Base64 데이터
+      };
+      reader.readAsDataURL(file); // 'file'을 문자열 형태의 데이터 URL(Base64)로 읽기 시작
+    }
   };
 
   $(".main-content").addEventListener("submit", handleMainContentEvent);
   $(".main-content").addEventListener("click", handleMainContentEvent);
+  $(".main-content").addEventListener("change", handleMainContentEvent);
 
   renderLecture();
   renderDetail();
