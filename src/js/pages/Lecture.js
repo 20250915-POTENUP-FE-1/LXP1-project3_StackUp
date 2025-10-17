@@ -216,58 +216,18 @@ export function Lecture() {
       registLecture(); // ← 등록 함수 (별도 정의)
     }
 
-    // 수정 폼 제출
-    if (e.type === "submit" && e.target.id === "lecture-edit-form") {
-      e.preventDefault();
-      editLecture();
-    }
+  $("#lecture-edit-form")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    editLecture();
+  });
+  $("#lecture-list").addEventListener("click", (e) => {
+    if (e.target.closest("button")) return;
 
-    // 수정 / 삭제 버튼
-    if (e.type === "click" && e.target.closest("#lecture-list")) {
-      const btn = e.target.closest("button");
-      if (!btn) return;
-
-      if (btn.classList.contains("edit-btn")) {
-        e.preventDefault();
-        editLectureForm(btn);
-      } else if (btn.classList.contains("delete-btn")) {
-        e.preventDefault();
-        deleteLecture(btn);
-      }
-    }
-
-    // 뒤로가기 버튼
-    if (e.type === "click" && e.target.classList.contains("btn-back")) {
-      e.preventDefault();
-      history.back();
-    }
-
-    // 카테고리 탭 클릭
-    if (e.type === "click" && e.target.closest(".category-btn")) {
-      const btn = e.target.closest(".category-btn");
-      if (!btn) return;
-      this.currentCategory = { code: btn.dataset.categoryCode ?? "all" };
-      renderCategory();
-      renderLecture();
-    }
-
-    // 파일 업로드
-    if (e.type === "change" && e.target.classList.contains("thumb-input")) {
-      e.preventDefault();
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        imageData = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  $(".main-content").addEventListener("submit", handleMainContentEvent);
-  $(".main-content").addEventListener("click", handleMainContentEvent);
-  $(".main-content").addEventListener("change", handleMainContentEvent);
+    const li = e.target.closest("li");
+    if (!li) return;
+    const liId = li.dataset.id;
+    location.href = `/src/js/pages/detail.html?id=${liId}`;
+  });
 }
 
 const lecture = new Lecture();
