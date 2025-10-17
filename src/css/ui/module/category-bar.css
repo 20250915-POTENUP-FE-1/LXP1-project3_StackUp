@@ -3,7 +3,7 @@
   justify-content: flex-start;
   gap: 12px;
   flex-wrap: wrap;
-  margin: 12px 0 36px;
+  margin: 12px 0;
 }
 .category-btn {
   display: inline-flex;
@@ -26,7 +26,7 @@
   box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
 }
 .category-btn.active {
-  border: 2px solid #6366f1;
+  border: 1px solid #6366f1;
   background: #f4f6ff;
 }
 .category-btn::before {
@@ -37,18 +37,87 @@
 .category-btn[data-category-code="all"]::before {
   content: "⭐";
 }
-.category-btn[data-category-code="코딩기초"]::before {
+.category-btn[data-category-code="cat_basic"]::before {
   content: "💻";
 }
-.category-btn[data-category-code="데이터분석"]::before {
+.category-btn[data-category-code="cat_data"]::before {
   content: "🔍";
 }
-.category-btn[data-category-code="생성형AI"]::before {
+.category-btn[data-category-code="cat_ai"]::before {
   content: "🤖";
 }
-.category-btn[data-category-code="디자인"]::before {
+.category-btn[data-category-code="cat_design"]::before {
   content: "🎨";
 }
-.category-btn[data-category-code="프로그래밍언어"]::before {
+.category-btn[data-category-code="cat_prog"]::before {
   content: "🧩";
+}
+
+/* 한 줄 컨테이너 */
+.category-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* 줄바꿈 허용 */
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* 카테고리 버튼들 */
+.category-row #category-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* () 최신순 ｜ 오래된순 : 카테고리 바로 옆에 작게 */
+.category-row .filter-wrap {
+  max-width: 60%;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem; /* 작게 */
+  color: #6b7280; /* 보조 톤 */
+  justify-content: flex-end;
+}
+
+/* 버튼 자체는 텍스트 버튼처럼 */
+.filter-btn {
+  background: none;
+  border: 0;
+  padding: 2px 4px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.filter-btn:hover {
+  color: #111827;
+}
+.filter-btn.active {
+  color: #6366f1;
+  font-weight: 600;
+}
+
+/* 가운데 ‘｜’ 자동 추가 */
+.filter-btn + .filter-btn::before {
+  content: "｜";
+  color: #d1d5db;
+  margin: 0 6px 0 2px;
+}
+
+@media (max-width: 1440px) {
+  .category-btn {
+    font-size: 14px;
+    padding: 8px 14px 8px 10px;
+  }
+  .category-select {
+    margin: 0;
+  }
+  .category-row {
+    margin-bottom: 0;
+    margin: 16px 0 12px;
+  }
+  .category-row .filter-wrap {
+    justify-content: flex-start;
+  }
 }

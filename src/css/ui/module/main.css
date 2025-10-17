@@ -20,6 +20,11 @@
 .content-header p {
   color: #666;
 }
+@media (max-width: 1440px) {
+  .content-header h1 {
+    font-size: 24px;
+  }
+}
 @media (max-width: 1024px) {
   .main-content {
     padding: 1.5rem;

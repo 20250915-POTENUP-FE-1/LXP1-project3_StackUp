@@ -3,10 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/ui/module/detail.css" />
+    <link rel="stylesheet" href="../../css/ui/index.css" />
     <title>Document</title>
   </head>
   <body>
-    <div id="lecture-detail"></div>
+    <div class="container">
+      <!-- 헤더 영역 -->
+      <!-- 메인 컨테이너 -->
+      <div class="main-container">
+        <!-- 사이드바 -->
+        <!-- 메인 콘텐츠 -->
+        <main class="main-content">
+          <div class="content-header">
+            <h1>강의 상세페이지</h1>
+          </div>
+          <!-- 강의 카테고리 선택 영역 -->
+          <div class="flex-wrap">
+            <!-- 강의 등록 폼 및 리스트 카드 -->
+            <div id="lecture-detail"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+
     <script type="module" src="/src/js/pages/detail.js"></script>
+    <script type="module" src="/src/js/layout/includeHeader.js"></script>
+    <script type="module" src="/src/js/layout/includeSidebar.js"></script>
   </body>
 </html>
