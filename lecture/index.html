@@ -30,16 +30,16 @@
       </div>
     </div>
     <!-- 수정 모달 -->
-    <div id="editModal" class="modal">
+    <!-- <div id="editModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h3>도서 정보 수정</h3>
+          <h3>강의 정보 수정</h3>
           <button class="modal-close">&times;</button>
         </div>
         <form id="lecture-edit-form" class="modal-form">
           <input type="hidden" id="edit-lecture-index" />
           <div class="form-group">
-            <label for="edit-lecture-name">도서명</label>
+            <label for="edit-lecture-category">카테고리</label>
             <input
               type="text"
               id="edit-lecture-name"
@@ -48,7 +48,16 @@
             />
           </div>
           <div class="form-group">
-            <label for="edit-lecture-price">가격</label>
+            <label for="edit-lecture-title">강의명</label>
+            <input
+              type="text"
+              id="edit-lecture-name"
+              class="form-input"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="edit-lecture-instructor">강사님</label>
             <input
               type="number"
               id="edit-lecture-price"
@@ -56,6 +65,61 @@
               required
             />
           </div>
+          <div class="form-group">
+            <label for="edit-lecture-content">내용</label>
+            <input
+              type="number"
+              id="edit-lecture-price"
+              class="form-input"
+              required
+            />
+          </div> -->
+          <!-- 수정 모달 -->
+<div id="editModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>강의 정보 수정</h3>
+      <button class="modal-close">&times;</button>
+    </div>
+
+    <form id="lecture-edit-form" class="modal-form">
+      <!-- 고유 id를 숨겨서 보관 -->
+      <input type="hidden" id="edit-lecture-id" />
+
+      <div class="form-group">
+        <label for="edit-lecture-category">카테고리</label>
+        <select id="edit-lecture-category" class="form-input" required>
+          <option value="all" disabled>카테고리 선택</option>
+          <option value="cat_basic">코딩 기초</option>
+          <option value="cat_data">데이터 분석</option>
+          <option value="cat_ai">생성형 AI</option>
+          <option value="cat_design">디자인</option>
+          <option value="cat_prog">프로그래밍 언어</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="edit-lecture-title">강의명</label>
+        <input type="text" id="edit-lecture-title" class="form-input" required />
+      </div>
+
+      <div class="form-group">
+        <label for="edit-lecture-instructor">강사님</label>
+        <input type="text" id="edit-lecture-instructor" class="form-input" required />
+      </div>
+
+      <div class="form-group">
+        <label for="edit-lecture-content">내용</label>
+        <textarea id="edit-lecture-content" class="form-input" rows="4" required></textarea>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="cancel-btn">취소</button>
+        <button type="submit" class="save-btn">저장</button>
+      </div>
+    </form>
+  </div>
+</div>
+
           <div class="modal-actions">
             <button type="button" class="cancel-btn">취소</button>
             <button type="submit" class="save-btn">저장</button>
