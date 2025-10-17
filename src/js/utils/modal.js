@@ -1,9 +1,9 @@
-// document.querySelector("#lecture-list").addEventListener("click", (e) => {
-//   if (e.target.classList.contains("modal-toggle-btn")) {
-//     document.querySelector(`#${e.target.dataset.modalTarget}`).style.display =
-//       "flex";
-//   }
-// });
+document.querySelector("#lecture-list").addEventListener("click", (e) => {
+  if (e.target.classList.contains("modal-toggle-btn")) {
+    document.querySelector(`#${e.target.dataset.modalTarget}`).style.display =
+      "flex";
+  }
+});
 
 document.querySelectorAll(".modal").forEach((modal) => {
   // 모달 내의 x 클릭시 모달 닫기
