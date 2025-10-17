@@ -1,4 +1,4 @@
-document.querySelector("#lecture-list").addEventListener("click", (e) => {
+document.querySelector(".main-content").addEventListener("click", (e) => {
   if (e.target.classList.contains("modal-toggle-btn")) {
     document.querySelector(`#${e.target.dataset.modalTarget}`).style.display =
       "flex";
