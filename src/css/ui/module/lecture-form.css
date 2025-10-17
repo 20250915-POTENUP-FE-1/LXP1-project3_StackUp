@@ -4,13 +4,13 @@
   border: 1px solid #e4e6ea;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.5);
   padding: 2.5rem;
-  max-width: 400px;
+  max-width: 20%;
   margin: 0 auto;
   position: fixed;
-  right: 100px;
+  right: 5.25%;
   top: calc(50% + 35px);
   transform: translateY(-50%);
-  z-index: 999;
+  z-index: 9999;
 }
 .lecture-card-header {
   margin-bottom: 2rem;
@@ -63,6 +63,9 @@
   padding: 16px;
   font-family: "Wanted Sans Variable";
 }
+.thumb-input {
+  width: 100%;
+}
 .option-select:focus,
 .title-input:focus,
 .instructor-input:focus,
@@ -97,4 +100,52 @@
 }
 .submit-btn:active {
   transform: translateY(0);
+}
+#preview {
+  display: block;
+  margin-top: 10px;
+  width: 100px;
+}
+#preview[src=""] {
+  display: none;
+}
+
+@media (width: 1440px) {
+  .lecture-card {
+    padding: 1.5rem;
+  }
+  .lecture-form {
+    gap: 10px;
+  }
+  .lecture-card-title {
+    font-size: 1.2rem;
+  }
+  .option-select,
+  .title-input,
+  .instructor-input,
+  .desc-input {
+    height: 34px;
+    padding: 0 10px;
+  }
+  .desc-input {
+    height: 80px;
+  }
+  #preview {
+    display: none;
+  }
+  .label {
+    font-size: 14px;
+  }
+  .option-select,
+  .title-input,
+  .instructor-input,
+  .desc-input {
+    font-size: 13px;
+  }
+  .submit-btn {
+    height: 40px;
+  }
+  .submit-btn {
+    font-size: 15px;
+  }
 }
