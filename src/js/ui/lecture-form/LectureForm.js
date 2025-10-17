@@ -6,7 +6,7 @@ import { LS_KEY } from "../../pages/Lecture.js";
 const res = await fetch("/src/js/ui/lecture-form/lecture-form.html", {
   cache: "no-cache",
 });
-if (!res.ok) throw new Error(`HTTP ${res.status}`); //404 505 에러대비
+if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
 const html = await res.text();
 const doc = new DOMParser().parseFromString(html, "text/html");
@@ -25,10 +25,8 @@ document.querySelector("#thumb-input").addEventListener("change", (e) => {
   reader.onload = function (event) {
     const base64Image = event.target.result;
     localStorage.setItem("thumbnailImage", base64Image);
-    // 미리보기 표시
     preview.src = base64Image;
   };
-  // 파일을 Base64 문자열로 변환
   reader.readAsDataURL(file);
 });
 

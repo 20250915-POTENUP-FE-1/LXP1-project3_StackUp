@@ -148,6 +148,14 @@ export function Lecture() {
     e.preventDefault();
     editLecture();
   });
+  $("#lecture-list").addEventListener("click", (e) => {
+    if (e.target.closest("button")) return;
+
+    const li = e.target.closest("li");
+    if (!li) return;
+    const liId = li.dataset.id;
+    location.href = `/src/js/pages/detail.html?id=${liId}`;
+  });
 }
 
 const lecture = new Lecture();
