@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>대시보드</title>
     <link rel="stylesheet" href="../src/css/lecture.css" />
+    <link rel="stylesheet" href="../src/css/ui/module/category-bar.css" />
+    <link rel="stylesheet" href="../src/css/ui/module/lecture-form.css" />
+    <link rel="stylesheet" href="../src/css/ui/module/lecture-list.css" />
   </head>
 
   <body>
@@ -19,7 +22,26 @@
           <div class="content-header">
             <h1>강의 관리</h1>
           </div>
-          <!-- 강의 카테고리 선택 영역 -->
+
+          <!-- ✅ 카테고리 + 정렬을 한 줄로 -->
+          <div class="category-row">
+            <!-- () 영역: 최신순 ｜ 오래된순 (작게) -->
+            <div class="filter-wrap" id="lecture-sort">
+              <button
+                type="button"
+                class="filter-btn active"
+                data-sort="newest"
+              >
+                최신순
+              </button>
+              <button type="button" class="filter-btn" data-sort="oldest">
+                오래된순
+              </button>
+            </div>
+          </div>
+          <!-- ⭐ 카테고리 버튼이 들어갈 자리 -->
+          <div class="category-select" id="category-bar"></div>
+          <!-- 강의 리스트 영역 -->
           <div class="flex-wrap">
             <ul id="lecture-list" class="lecture-list">
               <!-- 추가된 도서가 들어가는 영역 -->

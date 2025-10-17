@@ -1,6 +1,54 @@
 @import "./ui/index.css";
 @import "./ui/module/modal.css";
-@import "./ui/module/category-bar.css";
-@import "./ui/module/lecture-form.css";
-@import "./ui/module/lecture-list.css";
-@import "./ui/module/detail.css";
+
+/* 한 줄 컨테이너 */
+.category-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* 줄바꿈 허용 */
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* 카테고리 버튼들 */
+.category-row #category-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* () 최신순 ｜ 오래된순 : 카테고리 바로 옆에 작게 */
+.category-row .filter-wrap {
+  max-width: 1000px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.85rem; /* 작게 */
+  color: #6b7280; /* 보조 톤 */
+  justify-content: flex-end;
+}
+
+/* 버튼 자체는 텍스트 버튼처럼 */
+.filter-btn {
+  background: none;
+  border: 0;
+  padding: 2px 4px;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.filter-btn:hover {
+  color: #111827;
+}
+.filter-btn.active {
+  color: #6366f1;
+  font-weight: 600;
+}
+
+/* 가운데 ‘｜’ 자동 추가 */
+.filter-btn + .filter-btn::before {
+  content: "｜";
+  color: #d1d5db;
+  margin: 0 6px 0 2px;
+}
