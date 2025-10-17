@@ -1,0 +1,393 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+body {
+  font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system,
+    sans-serif;
+  color: #111827;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 36px;
+  background: #fff;
+  border-bottom: 1px solid #eceff3;
+  z-index: 1000;
+  transition: box-shadow 0.25s ease;
+}
+.navbar.scrolled {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo img {
+  height: 26px;
+  display: block;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+.menu a {
+  font-size: 15px;
+  font-weight: 500;
+  color: #374151;
+  padding-bottom: 3px;
+  line-height: 1;
+}
+.menu a:hover {
+  color: #3366ff;
+}
+.menu a.active {
+  color: #3366ff;
+  border-bottom: 2px solid #3366ff;
+}
+
+/* Right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Search */
+.search-box {
+  position: relative;
+}
+.search-box input {
+  height: 36px;
+  padding: 0 20px 0 10px;
+  border: 0.5px solid #cfd4e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-box input:focus {
+  border-color: #3366ff;
+  box-shadow: 0 0 0 3px rgba(51, 102, 255, 0.12);
+}
+.search-box .icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+/* Buttons */
+.btn-outline,
+.btn-light {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-outline {
+  border: 1px solid #c6d0f8;
+  background: #f5f7ff;
+  color: #3366ff;
+}
+.btn-outline:hover {
+  background: #e9efff;
+}
+.btn-light {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+}
+.btn-light:hover {
+  background: #f8f8f8;
+}
+
+/* Header height fix */
+.page {
+  padding-top: 64px;
+}
+/* ====== Hero Banner (3장 그리드) — 상세 전용 ====== */
+#detailPage .hero {
+  margin: 24px 0 8px;
+}
+#detailPage .hero .container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+#detailPage .hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+#detailPage .hero-card {
+  position: relative;
+  display: block;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f5f7fb;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+#detailPage .hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(17, 24, 39, 0.12);
+}
+#detailPage .hero-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+#detailPage .hero-card.with-arrow .hero-arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 16px rgba(17, 24, 39, 0.12);
+  font-size: 18px;
+  color: #111827;
+}
+@media (max-width: 1024px) {
+  #detailPage .hero-card {
+    height: 220px;
+  }
+}
+@media (max-width: 768px) {
+  #detailPage .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  #detailPage .hero-card {
+    height: 200px;
+  }
+  #detailPage .hero-card.with-arrow .hero-arrow {
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+/* 공통 컨테이너(상세 전용) */
+#detailPage .container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ===== Job Top — 상세 전용 ===== */
+#detailPage .job-top {
+  margin: 10px 0 24px;
+}
+#detailPage .job-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+}
+
+/* 왼쪽 영역 */
+#detailPage .job-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #6b7280;
+}
+#detailPage .job-meta .brand {
+  font-weight: 700;
+  color: #111827;
+}
+#detailPage .job-meta .dot {
+  color: #c5cad3;
+}
+
+#detailPage .job-title {
+  margin: 8px 0 10px;
+  font-size: 28px;
+  line-height: 1.35;
+  font-weight: 800;
+  color: #111827;
+}
+
+#detailPage .job-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+#detailPage .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #eef2ff;
+  color: #3b5bfd;
+}
+#detailPage .badge-blue {
+  background: #eef2ff;
+  color: #3b5bfd;
+}
+#detailPage .job-badges .link {
+  color: #3b5bfd;
+  font-size: 14px;
+  text-decoration: none;
+}
+#detailPage .job-badges .link:hover {
+  text-decoration: underline;
+}
+
+#detailPage .job-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 0 14px;
+  border-bottom: 1px solid #eaeef3;
+}
+#detailPage .job-stats .bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4f46e5;
+  display: inline-block;
+}
+#detailPage .job-stats .label {
+  font-weight: 600;
+  color: #4b5563;
+}
+#detailPage .job-stats .muted {
+  color: #6b7280;
+}
+
+/* 오른쪽 사이드 박스(Sticky) */
+#detailPage .job-side {
+  position: sticky;
+  top: 88px;
+} /* 72~104px에서 조절 */
+#detailPage .btn-primary {
+  display: block;
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  background: #3b5bfd;
+  color: #fff;
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(59, 91, 253, 0.25);
+  transition: transform 0.12s, box-shadow 0.2s, background 0.2s;
+}
+#detailPage .btn-primary:hover {
+  background: #3552ea;
+  transform: translateY(-1px);
+}
+#detailPage .btn-lg {
+  height: 52px;
+  font-size: 17px;
+}
+
+#detailPage .notice-card {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid #eaeef3;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+#detailPage .notice-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+#detailPage .notice-head .title {
+  font-weight: 700;
+  color: #374151;
+}
+#detailPage .notice-head .muted {
+  color: #6b7280;
+  font-size: 14px;
+}
+#detailPage .icon-info {
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid #e0e6f6;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+}
+#detailPage .notice-desc {
+  margin: 0;
+  font-size: 12.5px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* sticky가 제대로 동작하도록 (상세 한정) */
+#detailPage.page,
+#detailPage .job-top,
+#detailPage .job-grid,
+#detailPage .container {
+  overflow: visible;
+}
+
+/* 본문 타이포 — 상세 전용 */
+#detailPage .job-body.container {
+  max-width: 720px;
+}
+#detailPage .job-body h1,
+#detailPage .job-body h2 {
+  margin: 24px 0 12px;
+  font-weight: 800;
+}
+#detailPage .job-body p {
+  font-size: 15.5px;
+  line-height: 1.9;
+  color: #374151;
+  margin: 10px 0;
+}
+
+/* 반응형 — 상세 전용 */
+@media (max-width: 1024px) {
+  #detailPage .job-grid {
+    grid-template-columns: 1fr;
+  }
+  #detailPage .job-side {
+    position: static;
+  }
+}
