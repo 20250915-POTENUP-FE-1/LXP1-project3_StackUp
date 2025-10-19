@@ -22,6 +22,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 .lecture-item:hover {
   transform: translateY(-1px);
@@ -84,7 +85,7 @@
 }
 .edit-btn {
   background: #e0e7ff;
-  color: #6366f1;
+  color: #8364FF;
 }
 .edit-btn:hover {
   background: #c7d2fe;
@@ -92,7 +93,7 @@
 }
 .delete-btn {
   background: #fee2e2;
-  color: #dc2626;
+  color: #FF5C00;
 }
 .delete-btn:hover {
   background: #fecaca;

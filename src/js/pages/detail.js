@@ -15,33 +15,52 @@ if (!id) {
     <main id="detailPage" class="page">
       <!-- ✅ Hero Banner -->
       <section class="hero">
-        <div class="container swiper">
-          <div class="hero-grid swiper-wrapper">
-            <!-- 카드 1 -->
-            <a class="hero-card swiper-slide" href="#">
-              <img
-                src="${lecture.thumbnail}"
-                alt="미리캔버스 소개 배너 1"
-              />
-            </a>
-
-            <!-- 카드 2 -->
-            <a class="hero-card swiper-slide" href="#">
-              <img
-                src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F40832%2Femy4zlhrqhryau4w__1080_790.png&w=700&q=100"
-                alt="미리캔버스 소개 배너 2"
-              />
-            </a>
-
-            <!-- 카드 3 (오른쪽 동그란 화살표 포함) -->
-            <a class="hero-card swiper-slide with-arrow" href="#">
-              <img
-                src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F40832%2Fq2ui2asdut7xzpfo__1080_790.png&w=700&q=100"
-                alt="비즈하우스 소개 배너"
-              />
-              <span class="hero-arrow" aria-hidden="true">➜</span>
-            </a>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a class="hero-card swiper-slide with-arrow" href="#">
+                <img
+                  src="${lecture.thumbnail}"
+                  alt=""
+                />
+              </a>
+            </div>
+            
+            <div class="swiper-slide">
+              <a class="hero-card" href="#">
+                <img
+                  src="https://static.wanted.co.kr/images/wantedplus_event/potenup/2503/Slide_01.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="hero-card" href="#">
+                <img
+                  src="https://static.wanted.co.kr/images/wantedplus_event/potenup/2503/Slide_05.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="hero-card swiper-slide" href="#">
+                <img
+                  src="https://static.wanted.co.kr/images/wantedplus_event/potenup/2503/Slide_06.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="hero-card swiper-slide with-arrow" href="#">
+                <img
+                  src="https://static.wanted.co.kr/images/wantedplus_event/potenup/2503/Slide_07.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
           </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </section>
       <!-- ✅ 여기 바로 아래에 job-top 섹션 추가! -->
@@ -101,3 +120,26 @@ if (!id) {
     `;
   }
 }
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  loop: false,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  slidesPerView: 3,
+  spaceBetween: 16,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  // scrollbar: {
+  //   el: '.swiper-scrollbar',
+  // },
+});
