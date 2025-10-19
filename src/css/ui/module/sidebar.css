@@ -3,7 +3,8 @@
   background-color: #f9fafb;
   color: #333;
   padding: 2rem 1rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #ddd;
+  border-top: 0;
   transition: width 0.3s ease;
 }
 .sidebar h3 {

@@ -41,11 +41,6 @@ a {
   gap: 32px;
 }
 
-.logo img {
-  height: 26px;
-  display: block;
-}
-
 /* Menu */
 .menu {
   display: flex;
@@ -132,18 +127,19 @@ a {
 }
 /* ====== Hero Banner (3장 그리드) — 상세 전용 ====== */
 #detailPage .hero {
-  margin: 24px 0 8px;
-}
-#detailPage .hero .container {
   max-width: 1120px;
-  margin: 0 auto;
+  margin: 24px auto 8px;
   padding: 0 16px;
 }
-#detailPage .hero-grid {
+#detailPage .hero .swiper {
+  max-width: 1120px;
+  margin: 0 auto;
+  height: 260px;
+}
+/* #detailPage .hero-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
+} */
 #detailPage .hero-card {
   position: relative;
   display: block;
@@ -153,6 +149,7 @@ a {
   background: #f5f7fb;
   box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
   transition: transform 0.25s, box-shadow 0.25s;
+  cursor: default;
 }
 #detailPage .hero-card:hover {
   transform: translateY(-2px);
@@ -164,11 +161,12 @@ a {
   object-fit: cover;
   display: block;
 }
-#detailPage .hero-card.with-arrow .hero-arrow {
+
+#detailPage .swiper-button-next,
+#detailPage .swiper-button-prev {
   position: absolute;
   right: 16px;
   top: 50%;
-  transform: translateY(-50%);
   width: 40px;
   height: 40px;
   border-radius: 999px;
@@ -178,6 +176,16 @@ a {
   box-shadow: 0 6px 16px rgba(17, 24, 39, 0.12);
   font-size: 18px;
   color: #111827;
+}
+#detailPage .swiper-button-prev {
+  position: absolute;
+  right: auto;
+  left: 16px;
+}
+#detailPage .swiper-button-next svg,
+#detailPage .swiper-button-prev svg {
+  height: auto;
+  color: #3b5bfd
 }
 @media (max-width: 1024px) {
   #detailPage .hero-card {
@@ -365,6 +373,10 @@ a {
 #detailPage .job-grid,
 #detailPage .container {
   overflow: visible;
+}
+
+#detailPage .container.swiper {
+  overflow: hidden;
 }
 
 /* 본문 타이포 — 상세 전용 */
