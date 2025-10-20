@@ -26,7 +26,7 @@
   box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
 }
 .category-btn.active {
-  border: 1px solid #8364FF;
+  border: 1px solid #8364ff;
   background: #f4f6ff;
 }
 .category-btn::before {
@@ -109,9 +109,6 @@
   .category-btn {
     font-size: 14px;
     padding: 8px 14px 8px 10px;
-  }
-  .category-select {
-    margin: 0;
   }
   .category-row {
     margin-bottom: 0;
