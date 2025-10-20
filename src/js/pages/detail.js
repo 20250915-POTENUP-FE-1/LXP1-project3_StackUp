@@ -111,7 +111,7 @@ if (!id) {
             <!-- (선택) 본문도 왼쪽 컨텐츠 폭에 맞추려면 container 추가 -->
             <section class="job-body container" style="padding: 24px">
               <h1>강좌 상세</h1>
-              <p>여기에 강좌 상세 내용을 채우면 돼요.</p>
+              <div><img src="/src/images/detail_sample.png"></div>
             </section>
           </div>
         </div>
@@ -120,13 +120,13 @@ if (!id) {
     `;
   }
 }
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper(".swiper", {
   // Optional parameters
   loop: false,
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
   },
 
   slidesPerView: 3,
@@ -134,8 +134,8 @@ const swiper = new Swiper('.swiper', {
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 
   // And if we need scrollbar

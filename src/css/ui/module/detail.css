@@ -128,7 +128,7 @@ a {
 /* ====== Hero Banner (3장 그리드) — 상세 전용 ====== */
 #detailPage .hero {
   max-width: 1120px;
-  margin: 24px auto 8px;
+  margin: 24px auto 12px;
   padding: 0 16px;
 }
 #detailPage .hero .swiper {
@@ -185,7 +185,7 @@ a {
 #detailPage .swiper-button-next svg,
 #detailPage .swiper-button-prev svg {
   height: auto;
-  color: #3b5bfd
+  color: #3b5bfd;
 }
 @media (max-width: 1024px) {
   #detailPage .hero-card {
@@ -382,7 +382,10 @@ a {
 /* 본문 타이포 — 상세 전용 */
 #detailPage .job-body.container {
   max-width: 720px;
-  height: 1000px;
+  min-height: 1000px;
+}
+#detailPage .job-body.container img {
+  max-width: 100%;
 }
 #detailPage .job-body h1,
 #detailPage .job-body h2 {
